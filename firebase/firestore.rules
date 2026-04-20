@@ -1,0 +1,39 @@
+// firestore.rules
+// Deploy with: firebase deploy --only firestore:rules
+//
+// Public can READ all site data (portfolio, settings, etc.)
+// Only authenticated admin (server-side via Admin SDK) can WRITE.
+// The bot uses the Admin SDK which bypasses these rules entirely,
+// so write access is implicitly bot-only.
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Site content collections — read-only for everyone ──────────────────
+    match /site/{docId} {
+      allow read:  if true;
+      allow write: if false;  // bot uses Admin SDK — bypasses this
+    }
+
+    match /portfolio/{docId} {
+      allow read:  if true;
+      allow write: if false;
+    }
+
+    match /cv/{docId} {
+      allow read:  if true;
+      allow write: if false;
+    }
+
+    match /skills/{docId} {
+      allow read:  if true;
+      allow write: if false;
+    }
+
+    // ── Deny everything else ───────────────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

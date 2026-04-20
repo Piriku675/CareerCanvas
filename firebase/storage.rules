@@ -1,0 +1,22 @@
+// storage.rules
+// Deploy with: firebase deploy --only storage
+//
+// Public can READ uploaded portfolio images.
+// WRITE is only via Admin SDK (bot) — Storage rules apply to client SDK only.
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Portfolio images — publicly readable
+    match /portfolio/{allPaths=**} {
+      allow read:  if true;
+      allow write: if false;  // bot writes via Admin SDK
+    }
+
+    // Deny everything else
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

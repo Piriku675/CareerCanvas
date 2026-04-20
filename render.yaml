@@ -1,0 +1,26 @@
+# render.yaml
+# Render Blueprint — deploys the Telegram bot as a Web Service.
+# Commit this file to your repo root and connect to Render.
+#
+# Secret file (serviceAccountKey.json) must be added manually in
+# Render dashboard → Service → Environment → Secret Files
+# Mount path: /etc/secrets/serviceAccountKey.json
+
+services:
+  - type: web
+    name: anthony-portfolio-bot
+    runtime: node
+    rootDir: bot
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false         # Set manually in Render dashboard
+      - key: ADMIN_CHAT_ID
+        sync: false         # Set manually in Render dashboard
+      - key: FIREBASE_STORAGE_BUCKET
+        sync: false         # Set manually in Render dashboard
+      # FIREBASE_SERVICE_KEY is added as a Secret File instead:
+      # File path: /etc/secrets/serviceAccountKey.json
+    plan: free
