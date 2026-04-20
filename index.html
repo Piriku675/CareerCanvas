@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" id="favicon" href="data:," />  <!-- updated dynamically by app.js -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerCanvas Portfolio</title>
+  <meta name="description" content="Portfolio site powered by CareerCanvas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div id="site-loader" aria-hidden="true">
+    <div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo" id="nav-logo" aria-label="Home">
+      <!-- Replaced by app.js with logo img or text -->
+      Career<span>Canvas</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#cv">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="drawer" role="dialog" aria-label="Mobile navigation">
+    <a href="#about">About</a>
+    <a href="#portfolio">Work</a>
+    <a href="#cv">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-inner">
+      <p class="hero-tag reveal">Creative Professional</p>
+      <h1 class="hero-name reveal">Your<br/><em>Name</em></h1>
+      <p class="hero-sub reveal">Location</p>
+      <div class="hero-ctas reveal">
+        <a href="#portfolio" class="btn btn-fill">See my work</a>
+        <a href="#" class="btn btn-ghost" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about" aria-label="About">
+    <div class="section-wrap">
+      <div class="about-grid">
+        <div class="about-photo-col reveal" id="about-photo-wrap" style="display:none">
+          <div class="about-photo-frame">
+            <img id="about-photo" src="" alt="Profile photo" />
+          </div>
+        </div>
+        <div class="about-text-col">
+          <p class="eyebrow reveal">About me</p>
+          <h2 class="section-heading reveal">Your headline<br/>goes here.</h2>
+          <div class="about-body reveal">
+            <p>Your bio goes here.</p>
+          </div>
+          <div class="about-ctas reveal">
+            <a href="#portfolio" class="btn btn-fill">View my work</a>
+            <a href="#contact"   class="btn btn-ghost">Get in touch</a>
+          </div>
+        </div>
+        <div class="stats-col reveal">
+          <div class="stat"><span class="stat-num">0+</span><span class="stat-label">Years experience</span></div>
+          <div class="stat"><span class="stat-num">0+</span><span class="stat-label">Projects</span></div>
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Creative output</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" aria-label="Portfolio">
+    <div class="section-wrap">
+      <p class="eyebrow reveal">Selected work</p>
+      <h2 class="section-heading reveal">Projects</h2>
+      <div class="filter-row reveal" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+      </div>
+      <div class="port-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="cv" aria-label="Experience and Skills">
+    <div class="section-wrap">
+      <p class="eyebrow reveal">Resume</p>
+      <h2 class="section-heading reveal">Work History &amp;<br/>What I Know</h2>
+      <div class="cv-grid">
+        <div class="timeline reveal"></div>
+        <div class="skills-block reveal"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:rgba(255,255,255,.08)"></div>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-label="Contact">
+    <div class="section-wrap">
+      <div class="contact-inner">
+        <p class="eyebrow reveal">Get in touch</p>
+        <h2 class="section-heading reveal">Let's work<br/>together.</h2>
+        <p class="contact-body reveal">Have a project in mind? I'd love to hear about it.</p>
+        <a href="#" class="contact-email reveal">email@example.com</a>
+        <div class="contact-ctas reveal">
+          <a href="#" class="btn btn-fill" target="_blank" rel="noopener">Download CV</a>
+          <a href="#" class="btn btn-ghost">Email me</a>
+        </div>
+        <div class="social-row reveal"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <footer>
+    <p>© 2026 CareerCanvas. All rights reserved.</p>
+    <p>Powered by <span>CareerCanvas</span></p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
