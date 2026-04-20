@@ -10,12 +10,12 @@ import { getFirestore, collection, doc, getDocs, getDoc, query, orderBy }
 
 // ─── YOUR Firebase config ─────────────────────────────────────────────────────
 const firebaseConfig = {
-  apiKey:            "YOUR_API_KEY",
-  authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId:         "YOUR_PROJECT_ID",
-  storageBucket:     "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId:             "YOUR_APP_ID",
+  apiKey: "AIzaSyC2PtWHIKYLZx_hQuYhScoMeOr0rqq2DB8",
+  authDomain: "careercanvas-demo.firebaseapp.com",
+  projectId: "careercanvas-demo",
+  storageBucket: "careercanvas-demo.firebasestorage.app",
+  messagingSenderId: "4123280512",
+  appId: "1:4123280512:web:6f686e605145ee41861265"
 };
 
 const app = initializeApp(firebaseConfig);
